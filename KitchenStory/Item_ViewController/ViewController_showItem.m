@@ -68,11 +68,11 @@
     
     
     //food Image
-    foodImage = foodImage_Dictionary[foodName];
+    foodImage = foodImage_Dictionary[foodName]; // take the key and get the value of that name
     _foodImage_ImageView.image = [UIImage imageNamed:foodImage];
     
     //food Ingredeient TextField
-    _ingre_howToCook_TextView.text = food_IngredientDetails_HowToCook_Dictionary[foodName][1];
+    _ingre_howToCook_TextView.text = food_IngredientDetails_HowToCook_Dictionary[foodName][1]; // 1 represent for the ingredient details
 }
 
 /*

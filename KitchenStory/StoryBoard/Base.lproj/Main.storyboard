@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GsV-Gt-cae">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="joU-P7-GQf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -392,9 +392,27 @@
                             <outlet property="delegate" destination="vdC-0g-D3m" id="o9U-wa-yk9"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="My Recipe" id="3HW-aq-fbm">
                         <barButtonItem key="backBarButtonItem" title="Home" id="ldu-kM-k04"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Insert" id="bAp-wK-IfR">
+                                <connections>
+                                    <action selector="insertClick:" destination="vdC-0g-D3m" id="wKt-f2-dNs"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Edit" id="tn1-FB-5VS">
+                                <connections>
+                                    <action selector="editClicked:" destination="vdC-0g-D3m" id="teO-rg-B7f"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="editButton" destination="tn1-FB-5VS" id="iy5-Q8-vAh"/>
+                        <outlet property="tableViewOfRecipe" destination="mBo-EL-Tuy" id="JZE-ac-he7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y6f-Ou-xrE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -883,7 +901,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MBH-ir-rpn"/>
         <segue reference="RfP-LT-lSu"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		395C4942C3AF0DF2F0C80B9F /* Pods_KitchenStory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D4D654F74DF2920BBFBC7A /* Pods_KitchenStory.framework */; };
+		4CA4ED5CCA3739938E446BA4 /* Pods_KitchenStoryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EE38293B950C917B5941DC /* Pods_KitchenStoryTests.framework */; };
+		55D28FFBF3473A41404AD33B /* Pods_KitchenStory_KitchenStoryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1032FCA250E74D6C8C15FDC6 /* Pods_KitchenStory_KitchenStoryUITests.framework */; };
 		5C0BC2482472B90C002F18A9 /* ViewController_addRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0BC2472472B90C002F18A9 /* ViewController_addRecipe.m */; };
 		5C2A13A62480E4EF00C31FF7 /* IQTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A13872480E4EF00C31FF7 /* IQTextView.m */; };
 		5C2A13A72480E4EF00C31FF7 /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A138B2480E4EF00C31FF7 /* IQToolbar.m */; };
@@ -26,6 +29,7 @@
 		5C6E8564247A0CAA009B31F6 /* ViewController_logout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E8563247A0CAA009B31F6 /* ViewController_logout.m */; };
 		5C6E856A247A2089009B31F6 /* ViewController_home.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E8569247A2089009B31F6 /* ViewController_home.m */; };
 		5CAFB6EE2478A7D800287606 /* ViewController_showItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CAFB6ED2478A7D800287606 /* ViewController_showItem.m */; };
+		5CB9E38B24972A3E006DF51C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CB9E38A24972A3E006DF51C /* GoogleService-Info.plist */; };
 		5CD94FA2247E1FBF00D9ABD6 /* MyRecipe_TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD94FA1247E1FBF00D9ABD6 /* MyRecipe_TableViewController.m */; };
 		7F32361A2460636A007E475E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3236192460636A007E475E /* AppDelegate.m */; };
 		7F32361D2460636A007E475E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F32361C2460636A007E475E /* SceneDelegate.m */; };
@@ -56,6 +60,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02EE38293B950C917B5941DC /* Pods_KitchenStoryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KitchenStoryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1032FCA250E74D6C8C15FDC6 /* Pods_KitchenStory_KitchenStoryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KitchenStory_KitchenStoryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		307DE2A1390BEE3D08471506 /* Pods-KitchenStoryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenStoryTests.release.xcconfig"; path = "Target Support Files/Pods-KitchenStoryTests/Pods-KitchenStoryTests.release.xcconfig"; sourceTree = "<group>"; };
+		5ACC333C471B895296B4172C /* Pods-KitchenStory-KitchenStoryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenStory-KitchenStoryUITests.debug.xcconfig"; path = "Target Support Files/Pods-KitchenStory-KitchenStoryUITests/Pods-KitchenStory-KitchenStoryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5C0BC2462472B90C002F18A9 /* ViewController_addRecipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_addRecipe.h; sourceTree = "<group>"; };
 		5C0BC2472472B90C002F18A9 /* ViewController_addRecipe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_addRecipe.m; sourceTree = "<group>"; };
 		5C2A13872480E4EF00C31FF7 /* IQTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQTextView.m; sourceTree = "<group>"; };
@@ -96,8 +104,10 @@
 		5C6E8569247A2089009B31F6 /* ViewController_home.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_home.m; sourceTree = "<group>"; };
 		5CAFB6EC2478A7D800287606 /* ViewController_showItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_showItem.h; sourceTree = "<group>"; };
 		5CAFB6ED2478A7D800287606 /* ViewController_showItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_showItem.m; sourceTree = "<group>"; };
+		5CB9E38A24972A3E006DF51C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5CD94FA0247E1FBF00D9ABD6 /* MyRecipe_TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRecipe_TableViewController.h; sourceTree = "<group>"; };
 		5CD94FA1247E1FBF00D9ABD6 /* MyRecipe_TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRecipe_TableViewController.m; sourceTree = "<group>"; };
+		6DE4C978211D1B7811F683D9 /* Pods-KitchenStoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenStoryTests.debug.xcconfig"; path = "Target Support Files/Pods-KitchenStoryTests/Pods-KitchenStoryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F3236152460636A007E475E /* KitchenStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitchenStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F3236182460636A007E475E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7F3236192460636A007E475E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -116,6 +126,10 @@
 		7F32363B2460636C007E475E /* KitchenStoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KitchenStoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F32363F2460636C007E475E /* KitchenStoryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KitchenStoryUITests.m; sourceTree = "<group>"; };
 		7F3236412460636C007E475E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80B20E4334E81A2343D08738 /* Pods-KitchenStory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenStory.release.xcconfig"; path = "Target Support Files/Pods-KitchenStory/Pods-KitchenStory.release.xcconfig"; sourceTree = "<group>"; };
+		A4D4D654F74DF2920BBFBC7A /* Pods_KitchenStory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KitchenStory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA33EB032ACB9E69452F5D6D /* Pods-KitchenStory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenStory.debug.xcconfig"; path = "Target Support Files/Pods-KitchenStory/Pods-KitchenStory.debug.xcconfig"; sourceTree = "<group>"; };
+		AED97F8B86511069731C6766 /* Pods-KitchenStory-KitchenStoryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KitchenStory-KitchenStoryUITests.release.xcconfig"; path = "Target Support Files/Pods-KitchenStory-KitchenStoryUITests/Pods-KitchenStory-KitchenStoryUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				395C4942C3AF0DF2F0C80B9F /* Pods_KitchenStory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CA4ED5CCA3739938E446BA4 /* Pods_KitchenStoryTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55D28FFBF3473A41404AD33B /* Pods_KitchenStory_KitchenStoryUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +289,8 @@
 				7F3236332460636C007E475E /* KitchenStoryTests */,
 				7F32363E2460636C007E475E /* KitchenStoryUITests */,
 				7F3236162460636A007E475E /* Products */,
+				C80053062C61A29174DAE966 /* Pods */,
+				B70DCB5093ED5D12EC5DEBDF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -288,6 +307,7 @@
 		7F3236172460636A007E475E /* KitchenStory */ = {
 			isa = PBXGroup;
 			children = (
+				5CB9E38A24972A3E006DF51C /* GoogleService-Info.plist */,
 				5C2A13852480E4EF00C31FF7 /* IQKeyboardManager */,
 				7F3236292460636C007E475E /* Info.plist */,
 				7F32362A2460636C007E475E /* main.m */,
@@ -370,6 +390,30 @@
 			path = Register_ViewController;
 			sourceTree = "<group>";
 		};
+		B70DCB5093ED5D12EC5DEBDF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4D4D654F74DF2920BBFBC7A /* Pods_KitchenStory.framework */,
+				1032FCA250E74D6C8C15FDC6 /* Pods_KitchenStory_KitchenStoryUITests.framework */,
+				02EE38293B950C917B5941DC /* Pods_KitchenStoryTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C80053062C61A29174DAE966 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA33EB032ACB9E69452F5D6D /* Pods-KitchenStory.debug.xcconfig */,
+				80B20E4334E81A2343D08738 /* Pods-KitchenStory.release.xcconfig */,
+				5ACC333C471B895296B4172C /* Pods-KitchenStory-KitchenStoryUITests.debug.xcconfig */,
+				AED97F8B86511069731C6766 /* Pods-KitchenStory-KitchenStoryUITests.release.xcconfig */,
+				6DE4C978211D1B7811F683D9 /* Pods-KitchenStoryTests.debug.xcconfig */,
+				307DE2A1390BEE3D08471506 /* Pods-KitchenStoryTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -377,9 +421,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F3236442460636C007E475E /* Build configuration list for PBXNativeTarget "KitchenStory" */;
 			buildPhases = (
+				5A464A1BAB2F6202B152689E /* [CP] Check Pods Manifest.lock */,
 				7F3236112460636A007E475E /* Sources */,
 				7F3236122460636A007E475E /* Frameworks */,
 				7F3236132460636A007E475E /* Resources */,
+				B0DDB4F6684FDC1E5F18AC8C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -394,6 +440,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F3236472460636C007E475E /* Build configuration list for PBXNativeTarget "KitchenStoryTests" */;
 			buildPhases = (
+				55AA57CF916C73C8C86EDD9B /* [CP] Check Pods Manifest.lock */,
 				7F32362C2460636C007E475E /* Sources */,
 				7F32362D2460636C007E475E /* Frameworks */,
 				7F32362E2460636C007E475E /* Resources */,
@@ -412,9 +459,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F32364A2460636C007E475E /* Build configuration list for PBXNativeTarget "KitchenStoryUITests" */;
 			buildPhases = (
+				3B4D49A3F32FD470ED56D989 /* [CP] Check Pods Manifest.lock */,
 				7F3236372460636C007E475E /* Sources */,
 				7F3236382460636C007E475E /* Frameworks */,
 				7F3236392460636C007E475E /* Resources */,
+				A17DB2486DA2E513632CD412 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -474,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F3236282460636C007E475E /* LaunchScreen.storyboard in Resources */,
+				5CB9E38B24972A3E006DF51C /* GoogleService-Info.plist in Resources */,
 				7F3236252460636C007E475E /* Assets.xcassets in Resources */,
 				7F3236232460636A007E475E /* Main.storyboard in Resources */,
 			);
@@ -494,6 +544,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B4D49A3F32FD470ED56D989 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KitchenStory-KitchenStoryUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55AA57CF916C73C8C86EDD9B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KitchenStoryTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A464A1BAB2F6202B152689E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KitchenStory-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A17DB2486DA2E513632CD412 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KitchenStory-KitchenStoryUITests/Pods-KitchenStory-KitchenStoryUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KitchenStory-KitchenStoryUITests/Pods-KitchenStory-KitchenStoryUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KitchenStory-KitchenStoryUITests/Pods-KitchenStory-KitchenStoryUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0DDB4F6684FDC1E5F18AC8C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KitchenStory/Pods-KitchenStory-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KitchenStory/Pods-KitchenStory-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KitchenStory/Pods-KitchenStory-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7F3236112460636A007E475E /* Sources */ = {
@@ -690,6 +843,7 @@
 		};
 		7F3236452460636C007E475E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA33EB032ACB9E69452F5D6D /* Pods-KitchenStory.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -707,6 +861,7 @@
 		};
 		7F3236462460636C007E475E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80B20E4334E81A2343D08738 /* Pods-KitchenStory.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -724,6 +879,7 @@
 		};
 		7F3236482460636C007E475E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DE4C978211D1B7811F683D9 /* Pods-KitchenStoryTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -744,6 +900,7 @@
 		};
 		7F3236492460636C007E475E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 307DE2A1390BEE3D08471506 /* Pods-KitchenStoryTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -764,6 +921,7 @@
 		};
 		7F32364B2460636C007E475E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ACC333C471B895296B4172C /* Pods-KitchenStory-KitchenStoryUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7M992VXZG5;
@@ -782,6 +940,7 @@
 		};
 		7F32364C2460636C007E475E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AED97F8B86511069731C6766 /* Pods-KitchenStory-KitchenStoryUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7M992VXZG5;

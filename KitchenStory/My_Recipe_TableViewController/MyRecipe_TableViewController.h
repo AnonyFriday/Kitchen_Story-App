@@ -10,10 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MyRecipe_TableViewController : UITableViewController
-@property (nonatomic, strong) NSArray *listOfFood_Name;
-@property (nonatomic, strong) NSArray *listOfFood_Image;
-@property (nonatomic, strong) NSArray *listOfHeader_Title;
+@interface MyRecipe_TableViewController : UITableViewController {
+    bool isEditingTableView;
+}
+@property (nonatomic, strong) NSMutableArray *listOfFood_Name;
+@property (nonatomic, strong) NSMutableArray *listOfFood_Image;
+@property (nonatomic, strong) NSMutableArray *listOfHeader_Title;
+
+
+-(NSInteger)findSection:(NSString*)sectionHeaderLetter;
 @end
+
+
 
 NS_ASSUME_NONNULL_END

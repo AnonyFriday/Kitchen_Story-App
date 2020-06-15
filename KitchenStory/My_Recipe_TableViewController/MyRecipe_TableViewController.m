@@ -10,6 +10,8 @@
 #import "ViewController_showItem.h"
 
 @interface MyRecipe_TableViewController ()
+@property (strong, nonatomic) IBOutlet UITableView *tableViewOfRecipe;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *editButton;
 
 @end
 
@@ -24,17 +26,25 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    listOfHeader_Title = @[@"A", @"B", @"C"];
-    listOfFood_Name = @[
-        @[@"Ann", @"Ashley"],
-        @[@"Bill", @"Billy", @"Bob"],
-        @[@"Charlie", @"Chimney", @"Chick"]];
-    listOfFood_Image = @[
-        @[@"image_1",@"image_2"],
-        @[@"image_2",@"image_3",@"image_4"],
-        @[@"image_4",@"image_5",@"image_6"],];
+    isEditingTableView = FALSE;
+
+    listOfHeader_Title = [NSMutableArray arrayWithObjects:@"A", @"B", @"C", nil];
+    
+    //Dimension array
+    listOfFood_Name = [[NSMutableArray alloc] initWithCapacity:3];
+    [listOfFood_Name insertObject:[NSMutableArray arrayWithObjects:@"Ann", @"Ashley", nil] atIndex:0] ;
+    [listOfFood_Name insertObject:[NSMutableArray arrayWithObjects:@"Bill", @"Billy", @"Bob", nil] atIndex:1] ;
+    [listOfFood_Name insertObject:[NSMutableArray arrayWithObjects:@"Charlie", @"Chimney", @"Chick", nil] atIndex:2];
+    
+//    listOfFood_Image = @[
+//        @[@"image_1",@"image_2"],
+//        @[@"image_2",@"image_3",@"image_4"],
+//        @[@"image_4",@"image_5",@"image_6"],];
+    
+    listOfFood_Image = [[NSMutableArray alloc] initWithCapacity:3];
+    [listOfFood_Image insertObject:[NSMutableArray arrayWithObjects:@"image_1",@"image_2", nil] atIndex:0] ;
+    [listOfFood_Image insertObject:[NSMutableArray arrayWithObjects:@"image_2",@"image_3",@"image_4", nil] atIndex:1] ;
+    [listOfFood_Image insertObject:[NSMutableArray arrayWithObjects:@"image_4",@"image_5",@"image_6", nil] atIndex:2];
 }
 
 #pragma mark - Table view data source
@@ -77,24 +87,19 @@
     NSString *itemClick = listOfFood_Name[indexPath.section][indexPath.row];
     vc.foodName = itemClick;
     
-    
     //[vc setModalPresentationStyle: UIModalPresentationFullScreen];
     [self presentViewController:vc animated:YES completion:nil];
     
     
 };
 
-
-
+/***********************Configure**************************/
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SingleIdentifier" forIndexPath:indexPath];
 
-    // Configure the cell...
-    
     // Name of Food
     cell.textLabel.text = listOfFood_Name[indexPath.section]
     [indexPath.row]; // give you the dynamically row
-    
     
     // Name of Image
     UIImage *image = [UIImage imageNamed:listOfFood_Image[indexPath.section][indexPath.row]];
@@ -113,17 +118,114 @@
 }
 */
 
-/*
-// Override to support editing the table view.
+/************************************ Deleting */
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [listOfFood_Image [indexPath.section] removeObjectAtIndex:indexPath.row]; // ex: section 1, remove this row
+        [listOfFood_Name [indexPath.section]removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+        
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        
     }   
 }
-*/
+
+
+- (IBAction)insertClick:(id)sender {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Add Recipe" message:@"Enter Recipe Data"        preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        
+        textField.placeholder = @"Recipe's Name";
+        textField.textColor = [UIColor brownColor];
+        textField.borderStyle = UITextBorderStyleRoundedRect;
+        textField.clearButtonMode = UITextBorderStyleLine;
+                
+    }];
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"Recipe's Description";
+        textField.textColor = [UIColor brownColor];
+        textField.borderStyle = UITextBorderStyleRoundedRect;
+        textField.clearButtonMode = UITextBorderStyleRoundedRect;
+        textField.secureTextEntry = TRUE;
+    }];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        NSArray* textFields = alert.textFields;
+        NSString* recipeName= [textFields[0] text];
+        NSString* recipeDescription = [textFields[1] text];
+        
+        
+        int insertSectionIndex =(int) [self findSection:(NSString*)[recipeName substringToIndex:1].uppercaseString];
+
+            
+        if(insertSectionIndex == -1) {
+            //adding new section to the NSMutableArray
+            [self->listOfHeader_Title addObject:(NSString*)[recipeName substringToIndex:1]];
+            
+            insertSectionIndex = (int)[self->listOfHeader_Title count]-1; // remember index from 0 - ... i - 1 when it comes to the array
+            NSLog(@"%d new Index Section", insertSectionIndex);
+            
+            // create new section, store new item in that new section
+            
+            NSLog(@"%@ header",[recipeName substringToIndex:1] );
+            
+            [self->listOfFood_Name insertObject:[NSMutableArray arrayWithObjects:recipeName, nil] atIndex:insertSectionIndex];
+            NSLog(@"%@ name of recipe", recipeName);
+            
+            [self->listOfFood_Image insertObject:[NSMutableArray arrayWithObjects:@"image_4", nil] atIndex:insertSectionIndex];
+            
+        } else {
+            [self->listOfFood_Name[insertSectionIndex] insertObject:recipeName atIndex:[self->listOfFood_Image[insertSectionIndex] count]]; // the end of the location
+            [self->listOfFood_Image[insertSectionIndex] insertObject:@"image_4" atIndex:[self->listOfFood_Image[insertSectionIndex] count]];
+            
+        }
+        //after entering the data, have to refresh the table view
+        [self->_tableViewOfRecipe reloadData];
+        NSLog(@"%d",insertSectionIndex);
+        
+        
+    }]];
+    
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+// first letter of the first index of the user input
+-(NSInteger)findSection:(NSString *)sectionHeaderLetter {
+    int arrayHeader =(int)[listOfHeader_Title count]; // total number of header
+    NSLog(@"%d",arrayHeader);
+    int index = -1;
+    for (int x = 0; x < arrayHeader; x++) {
+        if( [sectionHeaderLetter isEqualToString:listOfHeader_Title[x]]) {
+            index = x;
+            
+            //Testing
+            NSLog(@"%d index",index);
+            break;
+        }
+    }
+    
+    NSLog(@"%d indexOut",index);
+    return index;
+}
+- (IBAction)editClicked:(id)sender {
+    if( isEditingTableView == TRUE)
+    {
+        _editButton.title = @"Edit";
+    } else {
+        _editButton.title = @"Done";
+    }
+    
+    //toggle the editbutton if it's true or false
+    isEditingTableView =!isEditingTableView;
+    
+    [_tableViewOfRecipe setEditing:isEditingTableView];
+}
+
 
 /*
 // Override to support rearranging the table view.
