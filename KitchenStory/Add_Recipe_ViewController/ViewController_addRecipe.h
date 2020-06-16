@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@import Firebase;
+@import FirebaseDatabase;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ViewController_addRecipe : UIViewController
-
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 
 @end
 

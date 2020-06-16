@@ -150,13 +150,16 @@
         textField.secureTextEntry = TRUE;
     }];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction
+                      actionWithTitle:@"OK"
+                      style:UIAlertActionStyleDefault
+                      handler:^(UIAlertAction * _Nonnull action) {
         
         NSArray* textFields = alert.textFields;
         NSString* recipeName= [textFields[0] text];
         NSString* recipeDescription = [textFields[1] text];
         
-        
+         
         int insertSectionIndex =(int) [self findSection:(NSString*)[recipeName substringToIndex:1].uppercaseString];
 
             

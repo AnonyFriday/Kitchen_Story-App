@@ -16,6 +16,9 @@ target 'KitchenStory' do
     # Pods for testing
   end
 
+  # place holder for textview
+  pod 'SZTextView'
+  
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'
   # add pods for any other desired Firebase products
@@ -26,5 +29,6 @@ target 'KitchenStory' do
   # For example, to use Firebase Authentication and Cloud Firestore
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
 
 end
