@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="joU-P7-GQf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -286,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yjG-sN-fZx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3317.3913043478265" y="178.79464285714286"/>
+            <point key="canvasLocation" x="3364" y="179"/>
         </scene>
         <!--shareView-->
         <scene sceneID="ME8-i4-gsf">
@@ -363,7 +363,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8WX-32-lKy"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="square.and.arrow.up" catalog="system" selectedImage="square.and.arrow.up" id="jv8-p9-RMW"/>
+                    <tabBarItem key="tabBarItem" title="Share" image="square.and.arrow.up" catalog="system" selectedImage="square.and.arrow.up" id="jv8-p9-RMW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o8d-qD-ryC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -378,39 +378,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SingleIdentifier" textLabel="rj6-UV-O9L" detailTextLabel="7tF-Kh-STA" imageView="Qed-QC-gan" style="IBUITableViewCellStyleValue1" id="od4-Ck-g0r">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SingleIdentifier" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SingleIdentifier" id="lJd-sE-4rW">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="od4-Ck-g0r" id="4od-lH-aiW">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="43.666667938232422"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lJd-sE-4rW" id="B4t-CY-KrJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Pasta with Beef" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rj6-UV-O9L">
-                                            <rect key="frame" x="113.33333333333331" y="11.999999999999998" width="118.33333333333333" height="20.333333333333332"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7tF-Kh-STA">
-                                            <rect key="frame" x="331" y="11.999999999999998" width="44" height="20.333333333333332"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="image_6" id="Qed-QC-gan">
-                                            <rect key="frame" x="20" y="0.0" width="78.333333333333314" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </imageView>
-                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>
-                            <outlet property="dataSource" destination="vdC-0g-D3m" id="iXB-dK-dGn"/>
-                            <outlet property="delegate" destination="vdC-0g-D3m" id="o9U-wa-yk9"/>
+                            <outlet property="dataSource" destination="vdC-0g-D3m" id="UiD-Ph-NiE"/>
+                            <outlet property="delegate" destination="vdC-0g-D3m" id="xcQ-cE-vwr"/>
                         </connections>
                     </tableView>
                     <toolbarItems/>
@@ -471,7 +451,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ksF-9M-42h">
                                                         <rect key="frame" x="0.0" y="564" width="414" height="52.666666666666629"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOT-jV-FSy">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOT-jV-FSy">
                                                                 <rect key="frame" x="16" y="8" width="191" height="36.666666666666664"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <state key="normal">
@@ -485,8 +465,11 @@
                                                                         </fragment>
                                                                     </attributedString>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onButtonClick:" destination="NGJ-L9-PuX" eventType="touchUpInside" id="m2k-zj-9pM"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ie5-rU-vyO">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ie5-rU-vyO">
                                                                 <rect key="frame" x="207" y="8" width="191" height="36.666666666666664"/>
                                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="How To Cook">
@@ -500,6 +483,9 @@
                                                                         </fragment>
                                                                     </attributedString>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onButtonClick:" destination="NGJ-L9-PuX" eventType="touchUpInside" id="eGN-Gw-jgA"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -553,7 +539,9 @@
                     <connections>
                         <outlet property="foodImage_ImageView" destination="q0P-b4-yQw" id="eDE-9d-RcV"/>
                         <outlet property="foodName_Label" destination="Pua-a6-YTU" id="rq5-LI-8ZW"/>
+                        <outlet property="howToCook_Button" destination="Ie5-rU-vyO" id="GEC-ou-hWV"/>
                         <outlet property="ingre_howToCook_TextView" destination="VhL-J1-ak0" id="UmG-UA-zy8"/>
+                        <outlet property="ingredients_Button" destination="qOT-jV-FSy" id="96a-1e-gew"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8nI-MR-1Lg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -619,7 +607,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ODi-Zk-RoL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="table.badge.more" catalog="system" selectedImage="table.badge.more" id="WzH-2h-sty"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="table.badge.more" catalog="system" selectedImage="hammer.fill" id="WzH-2h-sty"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3n-I7-wDk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -658,7 +646,7 @@
                                                 <rect key="frame" x="16" y="82" width="382" height="50"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <attributedString key="attributedText"/>
-                                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                <textInputTraits key="textInputTraits" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -893,8 +881,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="xwI-ED-iH5" kind="relationship" relationship="viewControllers" id="dt3-VY-2ax"/>
-                        <segue destination="DDa-e4-fMu" kind="relationship" relationship="viewControllers" id="zfB-4N-MzR"/>
                         <segue destination="1D5-OO-alc" kind="relationship" relationship="viewControllers" id="00w-CO-Gl8"/>
+                        <segue destination="DDa-e4-fMu" kind="relationship" relationship="viewControllers" id="zfB-4N-MzR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6va-fJ-yV4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -928,9 +916,9 @@
         <image name="Email" width="285" height="69"/>
         <image name="FB" width="285" height="69"/>
         <image name="Google" width="285" height="69"/>
+        <image name="hammer.fill" catalog="system" width="128" height="115"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="image_2" width="428" height="918"/>
-        <image name="image_6" width="720" height="403"/>
         <image name="logo" width="500" height="500"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="table.badge.more" catalog="system" width="128" height="90"/>

@@ -27,38 +27,98 @@
     
     [_textField_email setDelegate:self];
     [_textField_password setDelegate:self];
+    //[_textField_password setSecureTextEntry:YES];
     
-    //store user's information
-    
+    /********************************Testing Realtime Database************************/
+    self.ref = [[FIRDatabase database] reference];
+
 }
 
-//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self.view endEditing:YES];
-//}
+
 
 // transition to the home_viewControllers
 - (IBAction)button_login:(id)sender {
-    inforDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:@"1234",@"1234",@"0000",@"0000",nil];
-    //[inforDictionary setObject:connector_register.userName_beingPass forKey:connector_register.password_beingPass];
-    if([_textField_email.text isEqualToString:[inforDictionary objectForKey:_textField_password.text]]){
-        
-        UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        ViewController_home *vc_home = [storyBoard instantiateViewControllerWithIdentifier:@"TabBarController"];
-        
-        [vc_home setModalPresentationStyle:UIModalPresentationFullScreen];
-        [self presentViewController:vc_home animated:YES completion:nil];
-        
-    } else {
-        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Your Username Or Password Is Invalid"
-                                       message:@"Try to login again"
-                                       preferredStyle:UIAlertControllerStyleAlert];
-         
-        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-           handler:^(UIAlertAction * action) {}];
-         
-        [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil];
+    NSLog(@"%@ password", _textField_password.text);
+    /********************************Testing Realtime Database************************/
+    @try {
+        [[[_ref child:@"account"] child:[self->_textField_email text]] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot){
+          
+            if( [snapshot exists])
+            {
+                NSString *username = snapshot.value[@"name"];
+                NSString *password = snapshot.value[@"password"];
+                
+                if ( self->_textField_email.text == username
+                && self->_textField_password.text == password ){
+                
+                UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                UITabBarController *vc = [storyBoard instantiateViewControllerWithIdentifier:@"TabBarController_1"];
+                
+                [vc setModalPresentationStyle:UIModalPresentationFullScreen];
+                [self presentViewController:vc animated:YES completion:nil];
+                    
+                } else {
+                    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Your Username Or Password Is Invalid"
+                                                                                   message:@"Try to login again"
+                                                                            preferredStyle:UIAlertControllerStyleAlert];
+                         
+                    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                            style:UIAlertActionStyleDefault
+                                                                          handler:^(UIAlertAction * action) {}];
+                    [alert addAction:defaultAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                }
+            } else {
+                UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Your Username Or Password Is Invalid"
+                                                                               message:@"Try to login again"
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                     
+                UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                        style:UIAlertActionStyleDefault
+                                                                      handler:^(UIAlertAction * action) {}];
+                [alert addAction:defaultAction];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+            
+            } withCancelBlock:^(NSError * _Nonnull error) {
+                             NSLog(@"%@", error.localizedDescription);
+                           }];
+            
+            
+            
+    } @catch (NSException *exception) {
+        NSLog(@"Problem in Logging");
+    } @finally {
+        NSLog(@"The end of Loggin function");
     }
+    
+    
+    
+//    inforDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:@"1234",@"1234",@"0000",@"0000",nil];
+//
+    
+//
+//    if([_textField_email.text isEqualToString:[inforDictionary objectForKey:_textField_password.text]]){
+//
+//
+//
+//        UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        UITabBarController *vc = [storyBoard instantiateViewControllerWithIdentifier:@"TabBarController"];
+//
+//        [vc setModalPresentationStyle:UIModalPresentationFullScreen];
+//        [self presentViewController:vc animated:YES completion:nil];
+//
+//    } else {
+//        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Your Username Or Password Is Invalid"
+//                                       message:@"Try to login again"
+//                                       preferredStyle:UIAlertControllerStyleAlert];
+//
+//        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+//           handler:^(UIAlertAction * action) {}];
+//
+//        [alert addAction:defaultAction];
+//        [self presentViewController:alert animated:YES completion:nil];
+//    }
 }
 
 

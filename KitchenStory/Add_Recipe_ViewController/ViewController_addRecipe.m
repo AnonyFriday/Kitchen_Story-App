@@ -34,6 +34,8 @@
 //add data to the realtime firebase
 - (IBAction)addItemToTableView:(id)sender {
     @try {
+        
+        
         NSString *foodName = [textField_recipeName text];
         NSString *howToCook = [[textView_howToCook text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         NSString *ingredients = [[textView_ingredient text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];

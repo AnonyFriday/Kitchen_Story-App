@@ -11,14 +11,22 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ViewController_showItem : UIViewController {
-    NSDictionary *foodImage_Dictionary;
-    NSDictionary *food_IngredientDetails_HowToCook_Dictionary;
-//    NSDictionary *food_HowToMake_Dictionary;
+    
+    /*****************************************Firebase Testing***************************************/
+    BOOL isIngreButton;
+    
+    
+    
+    /***************************************Dynamic Programming*********************************/
+//    NSDictionary *foodImage_Dictionary;
+//    NSDictionary *food_IngredientDetails_HowToCook_Dictionary;
 };
 
 @property (nonatomic, strong) NSString *foodName;
 @property (nonatomic, strong) NSString *foodImage;
-
+@property (nonatomic, strong) NSString *foodIngredient;
+@property (nonatomic, strong) NSString *foodHowToCook;
+-(void)onButtonClick:(id)sender;
 
 @end
 

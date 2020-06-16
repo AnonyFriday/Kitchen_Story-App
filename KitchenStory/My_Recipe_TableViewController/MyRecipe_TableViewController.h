@@ -7,15 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+@import FirebaseDatabase;
+@import Firebase;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MyRecipe_TableViewController : UITableViewController {
     bool isEditingTableView;
+    NSMutableDictionary *objectNSDictionaryListOfFood_TESTING;
 }
 @property (nonatomic, strong) NSMutableArray *listOfFood_Name;
 @property (nonatomic, strong) NSMutableArray *listOfFood_Image;
 @property (nonatomic, strong) NSMutableArray *listOfHeader_Title;
+
+/***************Testing Firebase****************/
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 
 
 -(NSInteger)findSection:(NSString*)sectionHeaderLetter;

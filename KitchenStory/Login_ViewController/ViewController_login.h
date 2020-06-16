@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@import FirebaseDatabase;
+@import Firebase;
 
 @interface ViewController_login : UIViewController<UITextFieldDelegate>
 //    NSMutableDictionary *inforDictionary;
-@property(nonatomic, strong)NSDictionary* inforDictionary;
-
+@property(nonatomic, strong)NSMutableDictionary* inforDictionary;
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 @end
 

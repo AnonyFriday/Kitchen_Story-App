@@ -45,26 +45,63 @@
     [listOfFood_Image insertObject:[NSMutableArray arrayWithObjects:@"image_1",@"image_2", nil] atIndex:0] ;
     [listOfFood_Image insertObject:[NSMutableArray arrayWithObjects:@"image_2",@"image_3",@"image_4", nil] atIndex:1] ;
     [listOfFood_Image insertObject:[NSMutableArray arrayWithObjects:@"image_4",@"image_5",@"image_6", nil] atIndex:2];
+    
+    
+    
+    /**TESTING Realtime DATABASE on Datasource*****************/
+    self.ref = [[FIRDatabase database] reference];
+    objectNSDictionaryListOfFood_TESTING = [[NSMutableDictionary alloc]init];
+    
+    [[_ref child:@"foods"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+      // Get user value
+        //iterate everychild in the firebase
+        for (FIRDataSnapshot* child in snapshot.children) {
+            NSString *key = child.key;
+            NSDictionary *foodDetails = child.value;
+            [self->objectNSDictionaryListOfFood_TESTING setObject:foodDetails forKey:key];
+        }
+        
+        NSLog(@"%@", self->objectNSDictionaryListOfFood_TESTING);
+        [self->_tableViewOfRecipe reloadData];
+      // ...
+    }];
+    
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [listOfHeader_Title count];
+    //return [listOfHeader_Title count];
+    return 1;
 }
 
 //
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [listOfFood_Name[section] count];
+    //return [listOfFood_Name[section] count]; //using dynamic programming
+    return [objectNSDictionaryListOfFood_TESTING count]; // using firebase
 }
 
-//numbero of header in the list
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return listOfHeader_Title[section];
-}
+//numbero of header in the list // using dynamic programming
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    return listOfHeader_Title[section];
+//}
 
 //event- handling the item
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    /*********************************************************Testing and apply with firebase**************************/
+    
+    
+    //name of the food
+   
+    
+    
+    
+    
+    
+    
+    /**********************************************************Testing the Alert Part*****************************************/
+    
 //    NSLog(@"Hello at %li, %li", (long)indexPath.section, (long)indexPath.row);
 //    NSLog(@"itemClicked = %@", itemClick);
     
@@ -78,12 +115,24 @@
 //    [alert addAction:defaultAction];
 //    [self presentViewController:alert animated:YES completion:nil];
     
+    
+    
+    
     UIStoryboard *storyboard =[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController_showItem *vc = [storyboard instantiateViewControllerWithIdentifier:@"ViewController_showItem"];
     
-    //name of the food
-    NSString *itemClick = listOfFood_Name[indexPath.section][indexPath.row];
-    vc.foodName = itemClick;
+        /************************************Firebase Testing********************/
+    NSString *foodID = [objectNSDictionaryListOfFood_TESTING allKeys][indexPath.row];
+    vc.foodName = (NSString*)[objectNSDictionaryListOfFood_TESTING valueForKey:foodID][@"name"];
+    vc.foodHowToCook = (NSString*)[objectNSDictionaryListOfFood_TESTING valueForKey:foodID][@"howToCook"];
+    vc.foodIngredient = (NSString*)[objectNSDictionaryListOfFood_TESTING valueForKey:foodID][@"ingredients"];
+    
+    
+
+        /************************************Dynamic Programming*/
+//    //name of the food
+//    NSString *itemClick = listOfFood_Name[indexPath.section][indexPath.row];
+//    vc.foodName = itemClick;
     
     //[vc setModalPresentationStyle: UIModalPresentationFullScreen];
     [self presentViewController:vc animated:YES completion:nil];
@@ -93,16 +142,34 @@
 
 /***********************Configure**************************/
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SingleIdentifier" forIndexPath:indexPath];
+    
+    /*********************************************************Testing and apply with firebase**************************/
+    NSString *foodID = [objectNSDictionaryListOfFood_TESTING allKeys][indexPath.row];
+    
+    NSMutableString *foodName = [[NSMutableString alloc] init];
+    [foodName appendString:[objectNSDictionaryListOfFood_TESTING valueForKey:foodID][@"name"]];
+    
+    
+    NSLog(@"%@ food name",foodName);
+        
+    cell.textLabel.text = foodName;
+    
+    
+    
+    /********************************************************Dynamic Programming********************************/
 
-    // Name of Food
-    cell.textLabel.text = listOfFood_Name[indexPath.section]
-    [indexPath.row]; // give you the dynamically row
-    
-    // Name of Image
-    UIImage *image = [UIImage imageNamed:listOfFood_Image[indexPath.section][indexPath.row]];
-    
-    cell.imageView.image = image;
+//
+//
+//    // Name of Food
+//    cell.textLabel.text = listOfFood_Name[indexPath.section]
+//    [indexPath.row]; // give you the dynamically row
+//
+//    // Name of Image
+//    UIImage *image = [UIImage imageNamed:listOfFood_Image[indexPath.section][indexPath.row]];
+//
+//    cell.imageView.image = image;
 
     return cell;
 }
@@ -116,18 +183,33 @@
 }
 */
 
-/************************************ Deleting */
+//*********************************** Deleting
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
         
-        [listOfFood_Image [indexPath.section] removeObjectAtIndex:indexPath.row]; // ex: section 1, remove this row
-        [listOfFood_Name [indexPath.section]removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+        /***********************************Firebase Version*************************/
         
+        NSString *foodID = [objectNSDictionaryListOfFood_TESTING allKeys][indexPath.row]; // accessing all the keys and swipe to delete the key
+        
+        [[[self.ref child:@"foods"] child:foodID]
+        removeValue
+        ];
+        
+        //remove the data from dictionary
+        [objectNSDictionaryListOfFood_TESTING removeObjectForKey:foodID];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        /************************************Dynamic Programming***********************/
+//        // Delete the row from the data source
+//
+//        [listOfFood_Image [indexPath.section] removeObjectAtIndex:indexPath.row]; // ex: section 1, remove this row
+//        [listOfFood_Name [indexPath.section]removeObjectAtIndex:indexPath.row];
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        
-    }   
+
+    }
 }
 
 
@@ -157,7 +239,7 @@
         
         NSArray* textFields = alert.textFields;
         NSString* recipeName= [textFields[0] text];
-        NSString* recipeDescription = [textFields[1] text];
+        //NSString* recipeDescription = [textFields[1] text];
         
          
         int insertSectionIndex =(int) [self findSection:(NSString*)[recipeName substringToIndex:1].uppercaseString];
