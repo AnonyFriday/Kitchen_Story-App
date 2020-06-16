@@ -7,7 +7,7 @@ Show the image of item when transition to the showItem screen
 Share functions are not developed to the limit of knowledge
 
 #### Account for testing on the login 
-Email: user
+Email: user__
 Password: 0000
 
 ## Firebase Reference: 
