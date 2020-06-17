@@ -198,7 +198,7 @@
         //remove the data from dictionary
         [objectNSDictionaryListOfFood_TESTING removeObjectForKey:foodID];
         
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
         
         /************************************Dynamic Programming***********************/
 //        // Delete the row from the data source

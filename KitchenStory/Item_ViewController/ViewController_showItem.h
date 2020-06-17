@@ -13,9 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ViewController_showItem : UIViewController {
     
     /*****************************************Firebase Testing***************************************/
-    BOOL isIngreButton;
-    
-    
     
     /***************************************Dynamic Programming*********************************/
 //    NSDictionary *foodImage_Dictionary;

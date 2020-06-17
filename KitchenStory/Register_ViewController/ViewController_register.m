@@ -32,8 +32,11 @@
     [_textfield_retype_password setDelegate:self];
     
     //set secure text for password and retype password
-    [_textfield_password setSecureTextEntry:TRUE];
-    [_textfield_retype_password setSecureTextEntry:TRUE];
+    
+ /************************************************************************updated: For somereason, i cannot get the text value from the textfield when setting the secure mode******************************/
+    
+//    [_textfield_password setSecureTextEntry:TRUE];
+//    [_textfield_retype_password setSecureTextEntry:TRUE];
     //dismiss the keyboard on SCROLLVIEW
     
     [_scrollView setKeyboardDismissMode:UIScrollViewKeyboardDismissModeOnDrag];

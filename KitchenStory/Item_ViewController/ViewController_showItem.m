@@ -32,6 +32,8 @@
     /*****************************************Firebase Testing***************************************/
     
     _foodName_Label.text = foodName;
+    _ingre_howToCook_TextView.text = foodIngredient;
+    _foodName_Label.lineBreakMode = NSLineBreakByClipping;
     
     /***************************************Dynamic Programming*********************************/
 //    // food Dictionary
